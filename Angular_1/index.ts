@@ -108,6 +108,50 @@ const hocvien2: HocVien = {
 }
 
 // Opinal chaining
+//data =[]
+// data.hocVien = indefined
+//data.hocVien.hoTen => error
+
+// data && data.hocVien && data.hocVien.hoTen
+//data?.hocVien?.hoTen
+
+let diemToan = 0
+console.log(diemToan || 'N/A');
+console.log(diemToan ?? 'N/A');
+//=> ?? chi kiem tra gia tri null va undefined
+
+//Class
+class NhanVien{
+    hoTen: string
+    tuoi: number
+
+    constructor(hoTen: string, tuoi: number){
+        this.hoTen = hoTen
+        this.tuoi = tuoi
+    }
+
+    tinhLuong(): number{
+        return 1000
+    }
+}
+
+class GiamDoc extends NhanVien {
+    heSoLuong: number
+
+    constructor(hoTen: string, tuoi: number, heSoLuong: number){
+        super(hoTen, tuoi)
+        this.heSoLuong = heSoLuong
+    }
+
+    tinhLuong(): number {
+        return super.tinhLuong() * this.heSoLuong
+    }
+}
+
+const giamDoc = new GiamDoc('Nguyen Van Teo', 25, 5)
+console.log(giamDoc.tinhLuong());
+
+
 
 
 
