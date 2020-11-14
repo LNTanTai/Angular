@@ -151,6 +151,51 @@ class GiamDoc extends NhanVien {
 const giamDoc = new GiamDoc('Nguyen Van Teo', 25, 5)
 console.log(giamDoc.tinhLuong());
 
+// Interface 
+interface Animal {
+    name: string;
+    eat(): void
+    sound(): void
+    run(): void
+}
+
+
+interface Attribute{
+    color: string
+    type: string
+}
+
+class Dog implements Animal, Attribute {
+    name: string;
+    color: string;
+    type: string;
+
+    constructor(name: string, color: string, type: string){
+        this.name = name;
+        this.color = color;
+        this.type = type;
+    }
+
+    eat(): void{
+        console.log("Bof kobe")
+    }
+
+    sound(): void{
+        console.log("Gau Gau")
+    }
+    run(): void{
+        console.log(".......")
+    }
+}
+
+const txtName = <HTMLInputElement>document.getElementById('txtName')
+console.log(txtName.value);
+
+const btnSubmit = <HTMLInputElement>document.getElementById('btSubmit')
+btnSubmit.addEventListener('click', () => {
+    console.log('Click');
+    
+})
 
 
 

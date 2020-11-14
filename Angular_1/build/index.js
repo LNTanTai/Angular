@@ -56,3 +56,26 @@ var GiamDoc = /** @class */ (function (_super) {
 }(NhanVien));
 var giamDoc = new GiamDoc('Nguyen Van Teo', 25, 5);
 console.log(giamDoc.tinhLuong());
+var Dog = /** @class */ (function () {
+    function Dog(name, color, type) {
+        this.name = name;
+        this.color = color;
+        this.type = type;
+    }
+    Dog.prototype.eat = function () {
+        console.log("Bof kobe");
+    };
+    Dog.prototype.sound = function () {
+        console.log("Gau Gau");
+    };
+    Dog.prototype.run = function () {
+        console.log(".......");
+    };
+    return Dog;
+}());
+var txtName = document.getElementById('txtName');
+console.log(txtName.value);
+var btnSubmit = document.getElementById('btSubmit');
+btnSubmit.addEventListener('click', function () {
+    console.log('Click');
+});
